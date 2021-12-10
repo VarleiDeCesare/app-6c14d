@@ -39,9 +39,10 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(MovementProductsRequest $request, $sku) {
+
         $data = $request->all();
         $product = Product::where('sku', $sku)->first();
-        
+
         if ($data['operation'] === 'remove') {
             if ($data['quantity'] <= $product['quantity']) {
                 $product->update(['quantity' => $product['quantity'] - $data['quantity']]);
