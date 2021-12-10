@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MovementProductsRequest;
-use App\Jobs\UpdateQuantityOfProduct;
+use App\Models\MovementProduct;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class ProductController extends Controller {
     /**
@@ -15,7 +16,7 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return "porra";
+
     }
 
     /**
@@ -40,9 +41,40 @@ class ProductController extends Controller {
     public function update(MovementProductsRequest $request, $sku) {
         $data = $request->all();
         $product = Product::where('sku', $sku)->first();
+        
+        //todo isso aqui tem que ir tudo dentro de um job que não de pau
+        if ($data['operation'] === 'remove') {
+            if ($data['quantity'] <= $product['quantity']) {
+                $product->update(['quantity' => $product['quantity'] - $data['quantity']]);
+                $dataMovimentation = [
+                    "sku"       => $sku,
+                    "operation" => 'remove',
+                    "quantity"  => $data['quantity']
+                ];
+                $movimentation = new MovementProduct($dataMovimentation);
+                $movimentation->save();
 
-        UpdateQuantityOfProduct::dispatch($sku, $data,$product);
+            } else {
+                throw new \Error('Valor informado para retirar é maior da quantidade atual!');
+            }
+        }
+        if ($data['operation'] === 'add') {
+            if ($data['quantity'] >= 0) {
+                $product->update(['quantity' => $product['quantity'] + $data['quantity']]);
 
+                $dataMovimentation = [
+                    "sku"       => $sku,
+                    "operation" => 'add',
+                    "quantity"  => $data['quantity']
+                ];
+
+                $movimentation = new MovementProduct($dataMovimentation);
+                $movimentation->save();
+
+            } else {
+                throw new \Error('Valor incorreto, verifique se a quantia que deseja adicionar é positiva');
+            }
+        }
 
         return $product;
     }
