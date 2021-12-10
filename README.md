@@ -9,7 +9,7 @@
 ### Instruções para a utilização da aplicação:
 
 - Subir a aplicação do Mysql com o docker rodando o seguinte comando no terminal -> "docker-compose up"
-    - A aplicação do banco de dados irá ser rodado na porta 3038 localmente, para que não haja interferência na mesma porta do MySQL instalado na máquina.
+    - A aplicação do banco de dados irá ser rodado na porta 3038 localmente, para que não haja interferência na mesma porta do MySQL instalado na máquina que costuma ser a 3036.
     - As credências para acesso podem ser alteradas no arquivo docker-compose.yml, por hora tanto o user como password estão setadas como "root"
     - Existe uma pasta chamada "db" na raiz do projeto na qual contém os dados para a aplicação do container do MySQL.
 
