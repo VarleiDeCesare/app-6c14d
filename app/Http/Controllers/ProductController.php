@@ -42,7 +42,6 @@ class ProductController extends Controller {
         $data = $request->all();
         $product = Product::where('sku', $sku)->first();
         
-        //todo isso aqui tem que ir tudo dentro de um job que não de pau
         if ($data['operation'] === 'remove') {
             if ($data['quantity'] <= $product['quantity']) {
                 $product->update(['quantity' => $product['quantity'] - $data['quantity']]);
