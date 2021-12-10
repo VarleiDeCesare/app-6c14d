@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4842c22e789d247c4b660e69490545f",
+    "content-hash": "ae33c2885a1a0368e529eace907534c1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -61,6 +61,70 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.0.3"
             },
             "time": "2021-03-11T06:42:03+00:00"
+        },
+        {
+            "name": "binary-cats/laravel-sku",
+            "version": "0.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/binary-cats/laravel-sku.git",
+                "reference": "64a4d5a036d8c1b5b178e41568678fbb29b9120e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/binary-cats/laravel-sku/zipball/64a4d5a036d8c1b5b178e41568678fbb29b9120e",
+                "reference": "64a4d5a036d8c1b5b178e41568678fbb29b9120e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.6|^6.0|^7.0|^8.0",
+                "php": "^7.2|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.6|^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "^7.0|^8.2|^9.0"
+            },
+            "suggest": {
+                "binary-cats/laravel-mailgun-webhooks": "Handle Mailgun webhooks in your Laravel application"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BinaryCats\\Sku\\SkuServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BinaryCats\\Sku\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cyrill Kalita",
+                    "email": "cyrill.kalita@gmail.com",
+                    "homepage": "https://github.com/binary-cats",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Generate SKUs for Eloquent models",
+            "homepage": "https://github.com/binary-cats/laravel-sku",
+            "keywords": [
+                "binary-cats",
+                "eloquent",
+                "laravel",
+                "sku"
+            ],
+            "support": {
+                "issues": "https://github.com/binary-cats/laravel-sku/issues",
+                "source": "https://github.com/binary-cats/laravel-sku/tree/0.4.1"
+            },
+            "time": "2021-12-04T17:22:50+00:00"
         },
         {
             "name": "brick/math",
@@ -2845,6 +2909,77 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "spatie/laravel-query-builder",
+            "version": "4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-query-builder.git",
+                "reference": "712b3fab3b5835c90f35052ba4bfa93f66d3d4bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-query-builder/zipball/712b3fab3b5835c90f35052ba4bfa93f66d3d4bb",
+                "reference": "712b3fab3b5835c90f35052ba4bfa93f66d3d4bb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^6.20.13|^7.30.4|^8.22.2",
+                "illuminate/http": "^6.20.13|7.30.4|^8.22.2",
+                "illuminate/support": "^6.20.13|7.30.4|^8.22.2",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "laravel/legacy-factories": "^1.0.4",
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^4.9|^5.8|^6.3",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\QueryBuilder\\QueryBuilderServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\QueryBuilder\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Vanderbist",
+                    "email": "alex@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily build Eloquent queries from API requests",
+            "homepage": "https://github.com/spatie/laravel-query-builder",
+            "keywords": [
+                "laravel-query-builder",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-query-builder/issues",
+                "source": "https://github.com/spatie/laravel-query-builder"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-10-27T14:48:58+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
